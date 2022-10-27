@@ -8302,6 +8302,16 @@ class ModelExtensionExchange1c extends Model {
 			}
 		}
 
+		if (version_compare($version, '1.6.4.7', '=')) {
+		    $this->log("Обновление до версии 1.6.4.8-1...'");
+		    $success = $this->update_1_6_4_8_1();
+		    if ($this->ERROR) return false;
+		    if ($success) {
+		        $version = '1.6.4.8-1';
+		        $message .= " Успешно обновлено до версии " . $version;
+		    }
+		}
+		
 		$pos = strrpos($version, 'b');
 
 		if ($beta) {
@@ -8564,5 +8574,21 @@ class ModelExtensionExchange1c extends Model {
 
 	} // update_1_6_4_7()
 
+	/**
+	 * Обновление до версии 1.6.4.8-1
+	 */
+	private function update_1_6_4_8_1() {
+	    // bump version
+	    $result = true;
+	    
+	    if (!$result) {
+	        $this->ERROR = 4000;
+	        $this->log("Error update to 1.6.4.8-1");
+	        return false;
+	    }
+	    
+	    return true;
+	    
+	} // update_1_6_4_7()
 }
 ?>
