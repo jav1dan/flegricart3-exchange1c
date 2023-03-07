@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modification>
-	<name>Exchange1C Module for OpenCart 3 (not official) </name>
+	<name>Exchange1C Module for Flegricart 3 (not official) </name>
 	<version>1.6.4.8-1 (not official)</version>
-	<id>OpenCart Exchange1C</id> 
-	<author>ATropichev</author>
-	<link>https://github.com/ATropichev/opencart3-exchange1c</link>
+	<id>Flegricart Exchange1C</id> 
+	<author>Jav1dan</author>
+	<link>https://github.com/jav1dan/flegricart-exchange1c</link>
 	<code>exchange1c</code>
 	<file path="admin/controller/common/column_left.php">
 		<operation error="skip">			
@@ -13,7 +13,7 @@
                         $this->load->model('setting/extension');
                         if ($this->user->hasPermission('access', 'extension/module/exchange1c') && in_array('exchange1c', $this->model_setting_extension->getInstalled('module'))) {
 				$marketplace[] = array(
-				     'name'	   => 'Exchange 1C v8.x',
+				     'name'	   => 'Модуль обмена с 1C v8.x',
 				     'href'     => $this->url->link('extension/module/exchange1c', 'user_token=' . $this->session->data['user_token'], true),
 				     'children' => array()		
 				);

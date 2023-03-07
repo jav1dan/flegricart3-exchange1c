@@ -75,32 +75,32 @@ if ($config->get('exchange1c_log_filename')) {
 $registry->set('log', $log);
 
 $config->set('session_engine', 'file');
-//$config->set('session_autostart', true);
-//$config->set('session_name', 'OCSESSID');
+$config->set('session_autostart', true);
+$config->set('session_name', 'OCSESSID');
 
 // ДЛЯ ОТЛАДКИ АВТОРИЗАЦИИ
-// $server_info = print_r($_SERVER, true);
-// $log->write($server_info);
+$server_info = print_r($_SERVER, true);
+$log->write($server_info);
 
 // Используются только для отладки (начало)
-//$log->write("Client IP address: " . $_SERVER['REMOTE_ADDR']);
-//if (isset($remote_user))
-// 	$log->write("remote_user: " . $remote_user);
-//
-//if (isset($_SERVER['PHP_AUTH_USER']))
-// 	$log->write("PHP_AUTH_USER: " . $_SERVER['PHP_AUTH_USER']);
-//
-//if (isset($_SERVER['REMOTE_USER']))
-// 	$log->write("REMOTE_USER: " . $_SERVER['REMOTE_USER']);
-//
-//if (isset($_SERVER['REDIRECT_REMOTE_USER']))
-// 	$log->write("REDIRECT_REMOTE_USER: " . $_SERVER['REDIRECT_REMOTE_USER']);
-//
-//if (isset($_SERVER['PHP_AUTH_PW']))
-// 	$log->write("PHP_AUTH_PW: " . $_SERVER['PHP_AUTH_PW']);
+$log->write("Client IP address: " . $_SERVER['REMOTE_ADDR']);
+if (isset($remote_user))
+	$log->write("remote_user: " . $remote_user);
 
-// $log->write("SESSION ENGINE: " . $config->get('session_engine'));
-// $log->write("CONFIG STORE ID: " . $config->get('config_store_id'));
+if (isset($_SERVER['PHP_AUTH_USER']))
+	$log->write("PHP_AUTH_USER: " . $_SERVER['PHP_AUTH_USER']);
+
+if (isset($_SERVER['REMOTE_USER']))
+	$log->write("REMOTE_USER: " . $_SERVER['REMOTE_USER']);
+
+if (isset($_SERVER['REDIRECT_REMOTE_USER']))
+	$log->write("REDIRECT_REMOTE_USER: " . $_SERVER['REDIRECT_REMOTE_USER']);
+
+if (isset($_SERVER['PHP_AUTH_PW']))
+	$log->write("PHP_AUTH_PW: " . $_SERVER['PHP_AUTH_PW']);
+
+$log->write("SESSION ENGINE: " . $config->get('session_engine'));
+$log->write("CONFIG STORE ID: " . $config->get('config_store_id'));
 // Используются только для отладки (конец)
 
 // Error Handler
